@@ -15,6 +15,7 @@
 		031B5A9F1B89213E00944E11 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 031B5A9D1B89213E00944E11 /* LaunchScreen.xib */; };
 		031B5AAB1B89213E00944E11 /* TouchDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 031B5AAA1B89213E00944E11 /* TouchDemoTests.m */; };
 		031B5AB61B89219100944E11 /* DotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 031B5AB51B89219100944E11 /* DotView.m */; };
+		031B5AB91B89A9E300944E11 /* OverlayScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 031B5AB81B89A9E300944E11 /* OverlayScrollView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,8 @@
 		031B5AAA1B89213E00944E11 /* TouchDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TouchDemoTests.m; sourceTree = "<group>"; };
 		031B5AB41B89219100944E11 /* DotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DotView.h; sourceTree = "<group>"; };
 		031B5AB51B89219100944E11 /* DotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DotView.m; sourceTree = "<group>"; };
+		031B5AB71B89A9E300944E11 /* OverlayScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverlayScrollView.h; sourceTree = "<group>"; };
+		031B5AB81B89A9E300944E11 /* OverlayScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverlayScrollView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +91,8 @@
 				031B5A931B89213E00944E11 /* AppDelegate.m */,
 				031B5A951B89213E00944E11 /* ViewController.h */,
 				031B5A961B89213E00944E11 /* ViewController.m */,
+				031B5AB71B89A9E300944E11 /* OverlayScrollView.h */,
+				031B5AB81B89A9E300944E11 /* OverlayScrollView.m */,
 				031B5AB41B89219100944E11 /* DotView.h */,
 				031B5AB51B89219100944E11 /* DotView.m */,
 				031B5A8E1B89213E00944E11 /* Supporting Files */,
@@ -228,6 +233,7 @@
 				031B5A941B89213E00944E11 /* AppDelegate.m in Sources */,
 				031B5AB61B89219100944E11 /* DotView.m in Sources */,
 				031B5A911B89213E00944E11 /* main.m in Sources */,
+				031B5AB91B89A9E300944E11 /* OverlayScrollView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

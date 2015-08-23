@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "DotView.h"
 #import "OverlayScrollView.h"
+#import "TouchDelayGestureRecognizer.h"
 
 @interface ViewController () <UIGestureRecognizerDelegate>
 @property (nonatomic, strong) UIView *canvasView;
@@ -26,6 +27,9 @@
     self.canvasView = [[UIView alloc] initWithFrame:bounds];
     self.canvasView.backgroundColor = [UIColor darkGrayColor];
     [self.view addSubview:self.canvasView];
+    
+    TouchDelayGestureRecognizer *touchDelayGesture = [[TouchDelayGestureRecognizer alloc] initWithTarget:nil action:nil];
+    [self.view addGestureRecognizer:touchDelayGesture];
     
     [self addDots:25 toView:self.canvasView];
     [DotView arrangeDotsRandomlyInView:self.canvasView];

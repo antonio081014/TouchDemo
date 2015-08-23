@@ -51,7 +51,15 @@
     for (int i=0; i<count; i++) {
         DotView *dotView = [DotView randomDotView];
         [view addSubview:dotView];
+        
+        UILongPressGestureRecognizer *gesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handleLongPress:)];
+        [dotView addGestureRecognizer:gesture];
     }
+}
+
+- (void)handleLongPress:(UILongPressGestureRecognizer *)gesture
+{
+    
 }
 
 

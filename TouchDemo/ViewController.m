@@ -53,6 +53,7 @@
         [view addSubview:dotView];
         
         UILongPressGestureRecognizer *gesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handleLongPress:)];
+        gesture.cancelsTouchesInView = NO;
         [dotView addGestureRecognizer:gesture];
     }
 }

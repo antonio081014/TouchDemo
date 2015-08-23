@@ -27,8 +27,7 @@
     [self.view addSubview:self.canvasView];
     
     [self addDots:25 toView:self.canvasView];
-//    [DotView arrangeDotsRandomlyInView:self.canvasView];
-    [DotView arrangeDotsNeatlyInView:self.canvasView];
+    [DotView arrangeDotsRandomlyInView:self.canvasView];
     
     self.scrollView = [[UIScrollView alloc] initWithFrame:bounds];
     [self.view addSubview:self.scrollView];

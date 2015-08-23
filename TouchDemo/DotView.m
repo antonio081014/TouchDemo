@@ -201,6 +201,17 @@ static const CGFloat kMaximumDotRadius = 44.f;
     self.highlighted = NO;
 }
 
+/// Override function in UIView.
+- (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent *)event
+{
+    CGRect touchBounds = self.bounds;
+    if (self.radius < 22.f) {
+        CGFloat expansion = 22.f - self.radius;
+        touchBounds = CGRectInset(touchBounds, -expansion, -expansion);
+    }
+    return CGRectContainsPoint(touchBounds, point);
+}
+
 #pragma mark - Assistant Function
 + (CGFloat)randomValueFromMinValue:(NSInteger)minValue toMaxValue:(NSInteger)maxValue
 {

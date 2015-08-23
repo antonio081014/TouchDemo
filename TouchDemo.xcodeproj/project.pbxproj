@@ -14,6 +14,7 @@
 		031B5A9C1B89213E00944E11 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 031B5A9B1B89213E00944E11 /* Images.xcassets */; };
 		031B5A9F1B89213E00944E11 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 031B5A9D1B89213E00944E11 /* LaunchScreen.xib */; };
 		031B5AAB1B89213E00944E11 /* TouchDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 031B5AAA1B89213E00944E11 /* TouchDemoTests.m */; };
+		031B5AB61B89219100944E11 /* DotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 031B5AB51B89219100944E11 /* DotView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		031B5AA41B89213E00944E11 /* TouchDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TouchDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		031B5AA91B89213E00944E11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		031B5AAA1B89213E00944E11 /* TouchDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TouchDemoTests.m; sourceTree = "<group>"; };
+		031B5AB41B89219100944E11 /* DotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DotView.h; sourceTree = "<group>"; };
+		031B5AB51B89219100944E11 /* DotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DotView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,9 +88,8 @@
 				031B5A931B89213E00944E11 /* AppDelegate.m */,
 				031B5A951B89213E00944E11 /* ViewController.h */,
 				031B5A961B89213E00944E11 /* ViewController.m */,
-				031B5A981B89213E00944E11 /* Main.storyboard */,
-				031B5A9B1B89213E00944E11 /* Images.xcassets */,
-				031B5A9D1B89213E00944E11 /* LaunchScreen.xib */,
+				031B5AB41B89219100944E11 /* DotView.h */,
+				031B5AB51B89219100944E11 /* DotView.m */,
 				031B5A8E1B89213E00944E11 /* Supporting Files */,
 			);
 			path = TouchDemo;
@@ -96,6 +98,9 @@
 		031B5A8E1B89213E00944E11 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				031B5A981B89213E00944E11 /* Main.storyboard */,
+				031B5A9B1B89213E00944E11 /* Images.xcassets */,
+				031B5A9D1B89213E00944E11 /* LaunchScreen.xib */,
 				031B5A8F1B89213E00944E11 /* Info.plist */,
 				031B5A901B89213E00944E11 /* main.m */,
 			);
@@ -221,6 +226,7 @@
 			files = (
 				031B5A971B89213E00944E11 /* ViewController.m in Sources */,
 				031B5A941B89213E00944E11 /* AppDelegate.m in Sources */,
+				031B5AB61B89219100944E11 /* DotView.m in Sources */,
 				031B5A911B89213E00944E11 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -347,9 +353,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = TouchDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -357,9 +365,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = TouchDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

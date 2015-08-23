@@ -7,21 +7,47 @@
 //
 
 #import "ViewController.h"
+#import "DotView.h"
 
 @interface ViewController ()
-
+@property (nonatomic, strong) UIView *canvasView;
+@property (nonatomic, strong) UIScrollView *scrollView;
+@property (nonatomic, strong) UIVisualEffectView *drawerView;
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    CGRect bounds = self.view.bounds;
+    
+    self.canvasView = [[UIView alloc] initWithFrame:bounds];
+    self.canvasView.backgroundColor = [UIColor darkGrayColor];
+    [self.view addSubview:self.canvasView];
+    
+    [self addDots:25 toView:self.canvasView];
+//    [DotView arrangeDotsRandomlyInView:self.canvasView];
+    [DotView arrangeDotsNeatlyInView:self.canvasView];
+    
+    self.scrollView = [[UIScrollView alloc] initWithFrame:bounds];
+    [self.view addSubview:self.scrollView];
+    
+    self.drawerView = [[UIVisualEffectView alloc] initWithEffect:[UIBlurEffect effectWithStyle:UIBlurEffectStyleDark]];
+    self.drawerView.frame = CGRectMake(0, 0, bounds.size.width, 650);
+    [self.scrollView addSubview:self.drawerView];
+    
+    self.scrollView.contentSize = CGSizeMake(bounds.size.width, bounds.size.height + self.drawerView.bounds.size.height);
+    self.scrollView.contentOffset = CGPointMake(0, self.drawerView.bounds.size.height);
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)addDots:(NSUInteger)count toView:(UIView *)view
+{
+    for (int i=0; i<count; i++) {
+        DotView *dotView = [DotView randomDotView];
+        [view addSubview:dotView];
+    }
 }
+
 
 @end

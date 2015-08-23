@@ -36,6 +36,9 @@
     self.drawerView.frame = CGRectMake(0, 0, bounds.size.width, 650);
     [self.scrollView addSubview:self.drawerView];
     
+    [self addDots:20 toView:self.drawerView.contentView];
+    [DotView arrangeDotsNeatlyInView:self.drawerView.contentView];
+    
     self.scrollView.contentSize = CGSizeMake(bounds.size.width, bounds.size.height + self.drawerView.bounds.size.height);
     self.scrollView.contentOffset = CGPointMake(0, self.drawerView.bounds.size.height);
     

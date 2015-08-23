@@ -38,6 +38,9 @@
     
     self.scrollView.contentSize = CGSizeMake(bounds.size.width, bounds.size.height + self.drawerView.bounds.size.height);
     self.scrollView.contentOffset = CGPointMake(0, self.drawerView.bounds.size.height);
+    
+    self.scrollView.userInteractionEnabled = NO;
+    [self.view addGestureRecognizer:self.scrollView.panGestureRecognizer];
 }
 
 - (void)addDots:(NSUInteger)count toView:(UIView *)view

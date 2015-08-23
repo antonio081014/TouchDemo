@@ -10,7 +10,7 @@
 #import "DotView.h"
 #import "OverlayScrollView.h"
 
-@interface ViewController ()
+@interface ViewController () <UIGestureRecognizerDelegate>
 @property (nonatomic, strong) UIView *canvasView;
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) UIVisualEffectView *drawerView;
@@ -54,10 +54,16 @@
         
         UILongPressGestureRecognizer *gesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handleLongPress:)];
         gesture.cancelsTouchesInView = NO;
+        gesture.delegate = self;
         [dotView addGestureRecognizer:gesture];
     }
 }
-
+#pragma mark - Moving Dot View
+/**
+ * User could move 2 or more dot views simultaneously, but could not scroll the scrollview with the pan gesture recognizer.
+ * Becuase these dot views are siblings, so their gesture recognizer does not interact with each other. By default, the pan gesture recognizer in
+ * superview is mutually exclusive in behavior with dot view's gesture recognizers.
+ */
 - (void)handleLongPress:(UILongPressGestureRecognizer *)gesture
 {
     UIView *dot = gesture.view;
@@ -88,6 +94,11 @@
         [self moveDot:dot withGesture:gesture];
     }];
     
+    // Disable the pan gesture recognizer on this point;
+    self.scrollView.panGestureRecognizer.enabled = NO;
+    // Then reenable it so the pan guesture recognizer could recognize new touches, but no this one..
+    self.scrollView.panGestureRecognizer.enabled = YES;
+    
     [DotView arrangeDotsNeatlyInViewWithNiftyAnimation:self.drawerView.contentView];
 }
 
@@ -115,4 +126,8 @@
     [DotView arrangeDotsNeatlyInViewWithNiftyAnimation:self.drawerView.contentView];
 }
 
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
+{
+    return YES;
+}
 @end
